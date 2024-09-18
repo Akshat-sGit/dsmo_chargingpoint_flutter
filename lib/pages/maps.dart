@@ -111,7 +111,7 @@ class _MapsState extends State<Maps> {
                     });
 
                     return GoogleMap(
-                      myLocationButtonEnabled: false,
+                      myLocationButtonEnabled: true,
                       zoomControlsEnabled: false,
                       initialCameraPosition: _initialCameraPosition,
                       onMapCreated: (controller) =>

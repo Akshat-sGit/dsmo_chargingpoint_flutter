@@ -14,7 +14,11 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFJZ8cX1mhfW5UWJr_0cQG2xRRVcn0G0Q"></script>
+  <script>
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}`;
+    document.head.appendChild(script);
+  </script>
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
