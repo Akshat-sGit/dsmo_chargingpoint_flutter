@@ -15,8 +15,11 @@
     the `--base-href` argument provided to `flutter build`.
   -->
   <script>
+    // fetch google maps api from dotenv 
     const script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}`;
+    script.defer = true;
+    script.async = true;
     document.head.appendChild(script);
   </script>
   <base href="$FLUTTER_BASE_HREF">
@@ -41,3 +44,7 @@
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
+
+
+
+<!-- 'https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}' -->

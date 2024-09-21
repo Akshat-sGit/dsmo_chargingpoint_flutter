@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:geolocator/geolocator.dart';  // For location fetching
+import 'package:geolocator/geolocator.dart'; // For location fetching
 
 class ChargingStationsService {
   final Dio dio = Dio();
@@ -15,9 +15,15 @@ class ChargingStationsService {
         dotenv.env['GOOGLE_MAPS_API_KEY'] ?? 'YOUR_DEFAULT_API_KEY';
 
     try {
-      // Fetch current location using Geolocator
+      // Create LocationSettings with the desired accuracy
+      LocationSettings locationSettings = const LocationSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 100, // Optional: Minimum distance change to trigger updates
+      );
+
+      // Fetch current location using Geolocator with the new settings
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+          locationSettings: locationSettings);
       double latitude = position.latitude;
       double longitude = position.longitude;
 
