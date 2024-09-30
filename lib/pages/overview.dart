@@ -1,6 +1,6 @@
 // ignore_for_file: unused_field
 
-import 'package:chargingpoint/pages/blank.dart';
+import 'package:chargingpoint/pages/apps_screen.dart';
 import 'package:chargingpoint/pages/dashboard.dart';
 import 'package:chargingpoint/pages/maps.dart';
 import 'package:chargingpoint/pages/registration_page.dart';
@@ -168,7 +168,7 @@ class _OverviewState extends State<Overview>
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const BlankPage()),
+          MaterialPageRoute(builder: (context) => const AppsScreen()),
         );
         break;
       case 3:
