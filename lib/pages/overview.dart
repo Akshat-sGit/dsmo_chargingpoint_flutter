@@ -4,6 +4,7 @@ import 'package:chargingpoint/pages/blank.dart';
 import 'package:chargingpoint/pages/dashboard.dart';
 import 'package:chargingpoint/pages/maps.dart';
 import 'package:chargingpoint/pages/registration_page.dart';
+import 'package:chargingpoint/pages/user_screen.dart';
 import 'package:chargingpoint/service/background_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -173,7 +174,7 @@ class _OverviewState extends State<Overview>
       case 3:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const BlankPage()),
+          MaterialPageRoute(builder: (context) => const UserScreen()),
         );
         break;
     }
